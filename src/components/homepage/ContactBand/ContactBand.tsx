@@ -16,7 +16,7 @@ export default function ContactBand() {
             Get in Touch
           </Typography>
           <Typography>
-            Navigating the home-buying process can pose its challenges, but with us by your side, we simplify the journey. Reach out today via call or email, and let's make finding your dream home a straightforward and enjoyable experience.
+            Navigating the home-buying process can pose its challenges, but with us by your side, we simplify the journey. Reach out today via call or email, and let&apos;s make finding your dream home a straightforward and enjoyable experience.
           </Typography>
         </Grid>
         <Grid item sm={6}>
