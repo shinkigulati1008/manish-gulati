@@ -4,7 +4,7 @@ import { DOMAIN } from "../data/templateMeta";
 import GetCarouselImages from "../pages/api/GetCarouselImages";
 import HomePageClient from "./page-client";
 
-const META_TITLE = "Manish Gulati Profile | Barfoot & Thompson";
+const META_TITLE = "Manish Gulati | Barfoot & Thompson";
 const META_DESCRIPTION =
   "Meet Manish Gulati, Residential Sales, from the Barfoot & Thompson Papakura office";
 

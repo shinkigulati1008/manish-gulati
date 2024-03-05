@@ -13,6 +13,10 @@ const styles: StylesObj = {
   root: {
     height: "calc(100vh - 3.5rem)",
     position: "relative",
+    ["@media (max-width: 600px)"]: {
+      height : "calc(100vh - 15rem)",
+    }
+    
   },
   heroImg: {
     height: "100%",
@@ -74,7 +78,7 @@ const styles: StylesObj = {
     right: 0,
   },
   socialsWrapperSx: {
-    top: { xs: "5rem", sm: "unset" },
+    top: { xs: "4rem", sm: "unset" },
     bottom: { sm: "5rem" },
   },
   socials: {

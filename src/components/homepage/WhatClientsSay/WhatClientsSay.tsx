@@ -9,13 +9,13 @@ import styles from "./WhatClientsSay.styles";
 import PersonIcon from '@mui/icons-material/Person';
 import { Avatar, Card, CardContent } from "@mui/material";
 import { Swiper, SwiperSlide } from 'swiper/react';
-import SwiperCore, { Navigation } from 'swiper';
+import SwiperCore, { Autoplay, Navigation, Pagination } from 'swiper';
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import 'swiper/css/autoplay';
 
-SwiperCore.use([Navigation]);
+SwiperCore.use([Navigation, Autoplay, Pagination]);
 
 const testimonialData = [
   {
@@ -43,6 +43,11 @@ const testimonialData = [
     content: "We found Manish very helpful. Our situation involved several owners, so there was a lot more work involved. We were kept up-to-date on viewings and received excellent feedback. First time choosing to do an auction and we were again informed of the process from start to finish. Manish was reliable, friendly and very professional",
     author: "Sharron Rusden",
   },
+  {
+    id:6,
+    content: "Manish made our home-buying experience a breeze! His expertise in the New Zealand real estate market and personalized approach were outstanding. He went above and beyond to find us the perfect home. Highly recommended!",
+    author: "Emily Stevens",
+  }
 ];
 
 export default function WhatClientsSay() {
@@ -57,32 +62,39 @@ export default function WhatClientsSay() {
   };
 
   const swiperOptions = {
+    loop: true,
+    speed: 500,
     spaceBetween: 20,
-    slidesPerView: 1,
     navigation: true,
     pagination: {
       clickable: true,
+      dynamicBullets: true,
+      dynamicMainBullets: 2,
+      renderBullet: function (index: number, className: string) {
+        return '<span class="' + className + '">' + (index + 1) + '</span>';
+      },
+      renderFraction: function (currentClass: string, totalClass: string) {
+        return '<span class="' + currentClass + '"></span>' +
+          '<span class="' + totalClass + '"></span>';
+      }
     },
+    slidesPerView: 1,
     autoplay: {
       delay: 3000,
       disableOnInteraction: false,
     },
-    loop: true,
-    centeredSlides: true,
+    centeredSlides: false,
     breakpoints: {
-      1024: {
-        slidesPerView: 3,
-      },
-      768: {
-        slidesPerView: 2,
-      },
-      640: {
-        slidesPerView: 1.5,
-      },
-      320: {
-        slidesPerView: 1,
-      },
-    },
+        1024: {
+          slidesPerView: 3,
+        },
+        768: {
+          slidesPerView: 2,
+        },
+        640: {
+          slidesPerView: 1,
+        }
+      },      
   };
   return (
     <Container maxWidth="xl" sx={styles.container}>
